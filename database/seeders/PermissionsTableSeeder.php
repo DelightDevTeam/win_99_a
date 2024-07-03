@@ -194,6 +194,11 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'title' => 'agent_change_password_access',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
                 'title' => 'payment_type',
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -208,6 +213,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            
         ];
 
         Permission::insert($permissions);

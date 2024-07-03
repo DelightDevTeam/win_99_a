@@ -67,6 +67,7 @@ class PermissionRoleTableSeeder extends Seeder
             'agent_delete',
             'agent_update',
             'make_transfer',
+            'agent_change_password_access',
 
         ]);
         Role::findOrFail(2)->permissions()->sync($master_permissions->pluck('id'));
