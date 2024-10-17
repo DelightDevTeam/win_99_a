@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\PGetWinnerController;
 
-Route::get('playerbalance', [PGetWinnerController::class, 'pgetb']);
+Route::get('pupc', [PGetWinnerController::class, 'pgetb']);
 Route::post('playbalance', [PGetWinnerController::class, 'Pbalance'])->name('PCredit');
 require_once __DIR__.'/admin.php';
 
