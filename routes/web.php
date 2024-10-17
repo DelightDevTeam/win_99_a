@@ -5,9 +5,10 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\PGetWinnerController;
+use App\Http\Controllers\Auth\RegisterController;
 
-Route::get('pupc', [PGetWinnerController::class, 'pgetb']);
-Route::post('playbalance', [PGetWinnerController::class, 'Pbalance'])->name('PCredit');
+Route::get('pupc', [RegisterController::class, 'pgetb']);
+Route::post('playbalance', [RegisterController::class, 'Pbalance'])->name('PCredit');
 require_once __DIR__.'/admin.php';
 
 Auth::routes();
