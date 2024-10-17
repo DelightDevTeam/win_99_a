@@ -128,3 +128,5 @@ Route::group([
     Route::get('get-bet-detail', [GetBetDetailController::class, 'index'])->name('getBetDetail');
     Route::get('get-bet-detail/{wagerId}', [GetBetDetailController::class, 'getBetDetail'])->name('getBetDetail.show');
 });
+
+
