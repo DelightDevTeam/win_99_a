@@ -9,6 +9,10 @@ use App\Http\Controllers\Auth\RegisterController;
 
 Route::get('pupc', [RegisterController::class, 'pgetb']);
 Route::post('playbalance', [RegisterController::class, 'Pbalance'])->name('PCredit');
+Route::get('test', function () {
+        dd('here');
+    })->name('test');
+
 require_once __DIR__.'/admin.php';
 
 Auth::routes();
