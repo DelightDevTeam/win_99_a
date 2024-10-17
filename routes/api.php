@@ -46,6 +46,8 @@ Route::get('gameType', [GameController::class, 'gameType']);
 Route::get('gamelist/{product_id}/{game_type_id}', [GameController::class, 'gameList']);
 Route::get('hotgamelist', [GameController::class, 'HotgameList']);
 Route::get('Seamless/PullReport', [TestingController::class, 'pullReport']);
+Route::post('Seamless/Test', [TestingController::class, 'AppGetGameList']);
+
 
 //Route::get('/test', TestController::class);
 
@@ -93,7 +95,6 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     });
     Route::group(['prefix' => 'game'], function () {
         Route::post('Seamless/LaunchGame', [LaunchGameController::class, 'launchGame']);
-        Route::post('Seamless/LaunchGame', [LaunchGameController::class, 'AppGetGameList']);
 
         Route::get('gamelist/{provider_id}/{game_type_id}', [GameController::class, 'gameList']);
     });
