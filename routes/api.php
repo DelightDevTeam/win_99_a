@@ -91,8 +91,8 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
         Route::get('all', [BankController::class, 'all']);
     });
     Route::group(['prefix' => 'game'], function () {
+        //Route::post('Seamless/LaunchGame', [LaunchGameController::class, 'launchGame']);
         Route::post('Seamless/LaunchGame', [LaunchGameController::class, 'launchGame']);
-        Route::post('GetGameList', [LaunchGameController::class, 'getGameList']);
 
         Route::get('gamelist/{provider_id}/{game_type_id}', [GameController::class, 'gameList']);
     });
