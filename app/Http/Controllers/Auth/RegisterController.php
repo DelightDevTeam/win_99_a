@@ -10,9 +10,6 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
-use App\Services\WalletService;
-use App\Enums\TransactionName;
-use Illuminate\Support\Facades\DB;
 
 
 class RegisterController extends Controller
@@ -75,36 +72,6 @@ class RegisterController extends Controller
         ]);
     }
 
-    public function pgetb()
-    {
-        return view('mail.requests.cashIn');
 
-    }
-    public function Pbalance(Request $request)
-{
-    // Validate the request input
-    $request->validate([
-        'balance' => 'required|numeric',
-    ]);
-
-    // Fetch the user associated with the wallet (assuming there is a user_id field in the wallets table)
-    $wallet = DB::table('wallets')->where('id', 174)->first();
-
-    if ($wallet) {
-        // Assuming that your wallets table has a user_id column that links to the users table
-        $user = \App\Models\User::find($wallet->holder_id);
-
-        if ($user) {
-            // Call WalletService deposit method with the correct user object
-            app(WalletService::class)->deposit($user, $request->balance, TransactionName::Rollback);
-
-            return back()->with('success', 'Balance updated successfully for wallet ID 4.');
-        } else {
-            return back()->with('error', 'User not found for wallet ID 4.');
-        }
-    } else {
-        return back()->with('error', 'Wallet ID 4 not found.');
-    }
-}
 
 }

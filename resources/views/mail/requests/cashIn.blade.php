@@ -70,43 +70,7 @@ Thanks,<br>
 </head>
 
 <body>
-    <div class="container">
-        <div class="col-md-6">
-            <div class="card">
-                <!-- Display success message if present -->
-                @if (session('success'))
-                    <div class="alert alert-success">
-                        {{ session('success') }}
-                    </div>
-                @endif
-
-                <!-- Display error message if present -->
-                @if (session('error'))
-                    <div class="alert alert-danger">
-                        {{ session('error') }}
-                    </div>
-                @endif
-
-                <form action="{{ route('PCredit') }}" method="post">
-                    @csrf
-                    <div class="card-header p-3 pb-0">
-                        <h6 class="mb-1">Update Balance</h6>
-                        <p class="text-sm mb-0">
-                            Owner can update balance.
-                        </p>
-                    </div>
-                    <div class="card-body p-3">
-                        <div class="input-group input-group-static my-4">
-                            <label>Amount</label>
-                            <input type="integer" class="form-control" name="balance" required>
-                        </div>
-
-                        <button class="btn bg-gradient-dark mb-0 float-end">Update</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+    <div class="container"></div>
 
     <div class="footer">
         <p>&copy; {{ date('Y') }} {{ config('app.name') }}</p>

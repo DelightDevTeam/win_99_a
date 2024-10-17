@@ -19,6 +19,8 @@ class LoginController extends Controller
         return view('auth.login');
     }
 
+
+
     public function login(LoginRequest $request)
     {
         $user = User::where('user_name', $request->user_name)->first();

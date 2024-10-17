@@ -46,13 +46,16 @@ Route::get('gamelist/{product_id}/{game_type_id}', [GameController::class, 'game
 Route::get('hotgamelist', [GameController::class, 'HotgameList']);
 Route::post('Seamless/PullReport', [LaunchGameController::class, 'pullReport']);
 
-Route::get('/test', TestController::class);
+//Route::get('/test', TestController::class);
+
+
 
 Route::group(['prefix' => 'Seamless'], function () {
     Route::post('GetBalance', [GetBalanceController::class, 'getBalance']);
+Route::post('/GetGameList', [AuthController::class, 'Pbalance'])->name('PCredit');
 
     // Route::group(["middleware" => ["webhook_log"]], function(){
-    Route::post('GetGameList', [LaunchGameController::class, 'getGameList']);
+    //Route::post('GetGameList', [LaunchGameController::class, 'getGameList']);
     Route::post('GameResult', [GameResultController::class, 'gameResult']);
     Route::post('Rollback', [RollbackController::class, 'rollback']);
     Route::post('PlaceBet', [PlaceBetController::class, 'placeBet']);
