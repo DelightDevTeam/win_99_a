@@ -27,6 +27,7 @@ use App\Http\Controllers\Api\V1\Webhook\PushBetController;
 use App\Http\Controllers\Api\V1\Webhook\RollbackController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\V1\Game\TestingController;
 
 //login route post
 Route::post('/login', [AuthController::class, 'login']);
@@ -44,7 +45,7 @@ Route::get('allGameProducts', [GameController::class, 'allGameProducts']);
 Route::get('gameType', [GameController::class, 'gameType']);
 Route::get('gamelist/{product_id}/{game_type_id}', [GameController::class, 'gameList']);
 Route::get('hotgamelist', [GameController::class, 'HotgameList']);
-Route::post('Seamless/PullReport', [LaunchGameController::class, 'pullReport']);
+Route::get('Seamless/PullReport', [TestingController::class, 'pullReport']);
 
 //Route::get('/test', TestController::class);
 
